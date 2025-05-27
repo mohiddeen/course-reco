@@ -16,7 +16,7 @@ categorical_columns = ['goal', 'hobby']
 
 encoder_CT = ColumnTransformer(
     transformers=[
-        ('cat', OneHotEncoder(sparse=False, handle_unknown='ignore'),
+        ('cat', OneHotEncoder(handle_unknown='ignore'),
          categorical_columns)
     ],
     remainder='passthrough'
