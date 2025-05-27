@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Recommender</title>
+</head>
+<body>
+    <h2>Course Recommender</h2>
+    <form action="/predict" method="POST">
+        <label for="goal">Goal:</label>
+        <select name="goal" required>
+            <option value="job">Job</option>
+            <option value="business">Business</option>
+            <option value="freelance">Freelance</option>
+        </select><br><br>
+
+        <label for="hobby">Hobby:</label>
+        <select name="hobby" required>
+            <option value="Web Development">Web Development</option>
+            <option value="Design">Design</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Cybersecurity">Cybersecurity</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+
+        <input type="submit" value="Recommend">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
